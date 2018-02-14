@@ -8,4 +8,3 @@ BIOTS2018: Local Energy for a Sustainable Society
 * Jannik Brun
 * Thomas Keller
 * Michel Perez
-* Johanna Campert
