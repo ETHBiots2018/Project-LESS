@@ -1,0 +1,58 @@
+/*****  VARIABLES  *****/
+body {
+  min-height: 100vh;
+}
+
+.main-bg {
+  background: url(../img/bg_bridge_low.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.main-title {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 12em;
+  margin-top: 0.75em;
+  margin-bottom: 0.3em;
+}
+
+.sub-title {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 3.5em;
+}
+
+.main-content {
+  background-color: white;
+  min-height: 80vh;
+  overflow: auto;
+}
+
+.data-field {
+  background-color: #E7E7E7;
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 2em;
+}
+
+#popup-buy {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#popup-content {
+  background-color: white;
+  border-radius: 1em;
+  padding: 1.5em;
+  margin-top: 5em;
+  max-width: 70vw;
+}
