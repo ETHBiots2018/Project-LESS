@@ -1,5 +1,6 @@
 function loggedIn(){ // returns true if the user is logged in MetaMask
-if (typeof window.web3 !== 'undefined') {
+//if (typeof window.web3 !== 'undefined') {
+if(window.web3.eth.accounts.length != 0){
 return true;
 }
 return false;
@@ -102,6 +103,26 @@ for (i=0;i<index;i++){
 
 
 }
+// total_shares
+for (i=0;i<index;i++){
+
+    inst = projInst[i];
+    
+    func='inst.totalShares.call(function(error, res) { if (error) { console.log(error); return;} projects[vvvv][5]=res;});';
+    func=func.replace(/vvvv/g, i);
+    eval(func);
+}
+
+//myShares
+for (i=0;i<index;i++){
+
+    inst = projInst[i];
+    func='inst.balanceOf.call("uuuu", function(error, res) { if (error) { console.log(error); return;} projects[vvvv][6]=res;});';
+    func=func.replace(/vvvv/g, i);
+    func=func.replace(/uuuu/g, ""+web3.eth.accounts[0]);
+    eval(func);
+}
+
 }
 
 function getMoneyInvested(){ // gets the total money invested in all projects by the user
@@ -122,7 +143,25 @@ function getEnergyTokens(){ // gets the total # energy tokens received in all pr
 function getProjectsUser(){ // gets all projects that the user invested in and puts their information in an array
   //get user key from MetaMask
 //var projects=[][]; // First Bracket: # of incr. ID, second bracket: [0]: Name , [1]: founding goal, [2]: invested money, [3]: produced energy tokens
-projects = getProjects();
+  for (i=0;i<index;i++){
+    projects[i][0]=projects[i][0];
+    projects[i][1]=projects[i][5]/projects[i][4];
+    projects[i][2]=projects[i][6]/projects[i][4];
+    projects[i][3]=projects[i][3];
+    projects[i][4]=projects[i][4];
+    projects[i][5]=projects[i][5];
+    projects[i][6]=projects[i][6];
+  }
+//   var max = index;
+//    for (i=0;i<max;i++){
+//      if(projects[i][6]==0){
+//      projects = projects.splice(i, 1);
+//      i--;
+//      max--;
+//      }
+//    }
+  
+  //projects=projectsfinal;
   return projects;
 }
 

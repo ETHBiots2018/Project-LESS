@@ -44,6 +44,14 @@ window.addEventListener('load', function() {
         $('#status-login').html('Logged in');
         $('#status-login').removeClass('badge-danger');
     }
+    
+    if (loggedIn()==false && /login.html/.test(window.location.href)==false){
+        window.location.replace("login.html");
+    }
+    
+//     if (loggedIn()==true && /login.html/.test(window.location.href)==true){
+//         window.location.replace("index.html");
+//     }
 
     if ($('#table-all-projects').length) {
         getProjects();
@@ -53,7 +61,9 @@ window.addEventListener('load', function() {
     }
 
     if ($('#table-user-projects').length) {
-        putProjectListUser('#table-user-projects');
+        getProjects();
+        setTimeout(function() { getProjectsUser();}, 4000);
+        setTimeout(function() { putProjectListUser('#table-user-projects');console.log("building"); }, 5000);
         putMoneyUser('#money-user');
         putEnergyTokenUser('#energy-token-user');
 
@@ -112,7 +122,7 @@ function putProjectList(id) {
     
     $("#gif-loading").addClass("d-none");
 
-    var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%" value="%width%%"></div></div></td><td><button class="btn btn-primary btn-sm button-founding" onclick="putPopupBuy(this)" role="button" value="%key%">Co-found it!</button></td></tr>';
+    var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%" value="%width%%"></div></div></td><td><button class="btn btn-primary btn-sm button-founding" onclick="putPopupBuy(this)" role="button" value="%key%" enabled="1">Co-found it!</button></td></tr>';
 
 
 
@@ -129,22 +139,28 @@ function putProjectList(id) {
         row = row.replace("%name%", projects[i][0]);
         row = row.replace("%goal%", projects[i][1]);
         row = row.replace(new RegExp('%width%', 'g'), progress);
-        row = row.replace("%key%", projects[i][3]);
+        if(progress!=100){
+            row = row.replace("%key%", projects[i][3]);
+        }
+        else{
+            row = row.replace("Co-found it!", "Funded!");
+            row = row.replace("enabled=\"1\"", "disabled");
+        }
 
         $(id).append(row);
     }
 }
-
+var moneyInvested=0;
 
 function putProjectListUser(id) {
     var projects = getProjectsUser();
     $("#gif-loading").addClass("d-none");
 
-    var htmlSrc = '<tr><th scope="row">%name%</th><td>%goal%</td>%share%<td>%</td><td>%etoken%</td></tr>';
+    var htmlSrc = '<tr><th scope="row">%name%</th><td>%goal%</td><td>%share%%</td></tr>';
 
     if (!projects.length) {
         console.log("No element in projects");
-        $("#table-all-projects").html("<h4>no projects available</h4>");
+        $("#table-user-projects").html("<h4>no projects available</h4>");
     }
 
     for (var i = 0; i < projects.length; i++) {
@@ -153,11 +169,13 @@ function putProjectListUser(id) {
         var progress = Math.round(projects[i][2] / projects[i][1] * 100);
 
         row = row.replace("%name%", projects[i][0]);
-        row = row.replace("%goal%", projects[i][1]);
-        row = row.replace("%share%", progress);
-        row = row.replace("%etoken%", projects[i][3]);
-
+        row = row.replace("%goal%", projects[i][2]);
+        row = row.replace('%share%', progress);
+        if(projects[i][6]!=0){
         $(id).append(row);
+        moneyInvested+=projects[i][2];
+        $('#money-user').text(''+ moneyInvested);
+        }
     }
 }
 
