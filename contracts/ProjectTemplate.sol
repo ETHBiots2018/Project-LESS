@@ -7,20 +7,20 @@ contract Project00000 {
 
     int8 public state; // 1:funding, 2: building, 3: service, 4: terminated
     address private admin; //EWZ
-    address private meter;
+    address private meter; // meter
     address private owner; //Guy with roof
     address private PTBank; //Power token contract
-    uint256 private missing;
-    uint256 private index;
-    uint256 private bonus;
-    uint256 private CHFtoWei;
-    uint256 private CHFtoCollect;
-    uint256 private balance;
-    
-    uint256 maxPower;
-    uint256 dayprice;
-    uint256 nightprice;
-    bool dayTime;
+    uint256 public missing; //missing funds in ICO
+    uint256 private index; //number of holders
+    uint256 private bonus; // roof / maintenance bonus
+    uint256 public CHFtoWei; // 1CHF in wei
+    uint256 public CHFtoCollect; // amount to collect
+    uint256 private balance;    //
+    uint256 public totalShares; //number of tokens generated
+    uint256 public maxPower;
+    uint256 public dayprice;
+    uint256 public nightprice;
+    bool public dayTime;
     
     function Project00000() public{
     dayTime=false;
@@ -30,16 +30,17 @@ contract Project00000 {
     admin = msg.sender;
     state=1;
     meter = 0;
-    owner = 0xc6847fcba49beca14671420DFe2FBB66D69c763C;
-    PTBank = 0xdbf30d5a88285aec859ed10111934b7b8ea583ab;
-    CHFtoWei = 1121300000000000; //Current ETH(wei) to CHF rate
-    CHFtoCollect = 100000;
+    owner = 0;
+    PTBank = 0;
+    CHFtoWei = 0; //Current ETH(wei) to CHF rate
+    CHFtoCollect = 0;
     missing=(CHFtoCollect * CHFtoWei) ;
     bonus = missing / 8 ;
     balanceOf[owner]+=bonus;
     balanceOf[admin]+=bonus;
     addHolder(owner);
     addHolder(admin);
+    totalShares = balanceOf[admin] + balanceOf[owner] + missing;
     }
     
     function addHolder(address holder) private{
@@ -143,5 +144,26 @@ contract Project00000 {
         
     }
     
+    function setOwner(address met) public{
+        require(state!=4);
+        require(msg.sender==admin || msg.sender==owner);
+        owner=met;
+    }
+    
+    function setPTBank(address met) public{
+        require(state!=4);
+        require(msg.sender==admin);
+        PTBank=met;
+        
+    }
+    
+    function setAmount(uint256 met, uint256 conv) public{
+        require(state==1);
+        require(msg.sender==admin);
+        state=3;
+        CHFtoCollect=met;
+        CHFtoWei=conv;
+        
+    }
+    
 }
-
