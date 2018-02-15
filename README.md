@@ -14,6 +14,7 @@ BIOTS2018: Local Energy for a Sustainable Society
 donwload the following scripts
 1. geth
 2. web3.py
+3. solc (for pyhton)
 
 start with setting up a light testnode, type in your terminal, ca. 20min to synch (15.02.2018)
 ```
