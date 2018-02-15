@@ -129,8 +129,8 @@
                 return;
             }
             console.log(web3.eth.accounts[0]);
-        $('#energy-token-user').text(''+ res);
-        $('#money-user').text(''+ moneyInvested);
+        $('#energy-token-user').text(''+ Math.round(res * 100) / 100);
+        $('#money-user').text(''+ Math.round(moneyInvested * 100) / 100);
         $('#accountName').text('Account nr: '+ web3.eth.accounts[0]);
         }
         );
