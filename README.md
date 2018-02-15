@@ -1,5 +1,8 @@
 # Project-LESS
-BIOTS2018: Local Energy for a Sustainable Society
+**Local Energy for a Sustainable Society**
+
+This Project was created during the [BIOTS 2018](https://biots.org) hackathon. The goal was to solve the [EWZ](https://ewz.ch) provided challenge.
+
 ## Contributors
 * Toni Tanner
 * Michael Vogel
