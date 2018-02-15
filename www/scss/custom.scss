@@ -1,3 +1,18 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input{
+
+  appearance: none;
+  margin: 0;
+}
+
+
+
 /*****  VARIABLES  *****/
 
 $main-blue: #123963;
@@ -40,6 +55,8 @@ body{
   background-color: white;
   min-height: 80vh;
   overflow: auto;
+  padding: 1em;
+  border-radius: 1em;
 }
 
 .data-field{
@@ -51,7 +68,7 @@ body{
 
 }
 
-#popup-buy{
+#popup-buy, #popup-no-metamask{
 
   background-color: rgba(0,0,0,0.5);
   width: 100vw;
@@ -63,7 +80,7 @@ body{
 
 }
 
-#popup-content{
+.popup-content{
 
   background-color: white;
   border-radius: 1em;

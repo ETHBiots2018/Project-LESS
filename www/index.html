@@ -33,7 +33,7 @@
   </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
@@ -42,8 +42,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="myaccount.html">My Account</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="exchange.html">Exchange tokens</a>
+                </li>
             </ul>
-            <span class="navbar-text badge badge-success ml-auto p-3">Logged in</span>
+            <span id="status-login" class="navbar-text badge badge-danger ml-auto p-3 " data-toggle="tooltip" data-placement="bottom" data-html="true" title="use MetaMask to log in">Logged out</span>
             <!-- otherwise badge-danger -->
         </div>
     </nav>
