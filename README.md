@@ -9,8 +9,15 @@ BIOTS2018: Local Energy for a Sustainable Society
 * Thomas Keller
 * Michel Perez
 
+## Installation
+### Web interface
+Everything's static. Put it on a webserver and type in all the project contract addresses.
 
-## start playing
+### Setup contracts
+Deploy one globally used PowerToken contract
+Deploy 1 Project contract per project. Define necessary startup vars. (Use python script?)
+
+### Install Testnode
 donwload the following scripts
 1. geth
 2. web3.py
