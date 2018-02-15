@@ -16,7 +16,7 @@
 // }
 
 
-/*****  Real main  ******/
+/*****  other functions  ******/
 
 window.addEventListener('load', function() {
 
