@@ -1,28 +1,48 @@
+/*****  test functions  ******/
+
+
+// function getProjects(){ // First Bracket: # of incr. ID, second bracket: [0]: Name , [1]: founding goal, [2]: collected money, [3]: BC-address
+//   var projects=[];
+//   projects[0]= ["SP Bern","100000","30000","BC1234567890"];
+//   projects[1]= ["wasserkraftwerk Aargau","150000","30000","BC2234567890"];
+//   projects[2]= ["SP Bern","50000","45000","BC2222222290"];
+//
+//   return projects;
+// }
+//
+// function loggedIn(){
+//
+//   return true;
+// }
+
+
+/*****  Real main  ******/
+
 window.addEventListener('load', function() {
 
   // Check if Web3 has been injected by the browser:
   if (typeof web3 !== 'undefined') {
 
-    // You have a web3 browser! Continue below!
-    startApp(web3);
-
   } else {
 
-    $("#popup-no-metamask").removeClass("d-none")
+    $("#popup-no-metamask").removeClass("d-none");
 
      }
 
      if(loggedIn()){
        $('#status-login').addClass('badge-success');
+       $('#status-login').html('Logged in');
        $('#status-login').removeClass('badge-danger');
      }
 
 if($('#table-all-projects').length){
     putProjectList('#table-all-projects');
+    console.log("putProjectList('#table-all-projects') started");
+    console.log($('#table-all-projects'));
 }
 
 
-})
+});
 
 
 $('#popup-buy').on('click', function(e) {
@@ -32,45 +52,34 @@ $('#popup-buy').on('click', function(e) {
 
 });
 
-function getProjects(){
-  var projects= [][];
-  projects[1]= ["SP Bern",]
 
-}
 
 function putProjectList(id){
   var projects= getProjects();
+  $("#gif-loading").addClass("d-none");
 
-    var htmlSource = '<tr>
-        <th scope="row" class="name"></th>
-        <td class="goal"></td>
-        <td>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-            </div>
-        </td>
-        <td><button class="btn btn-primary btn-sm" role="button" value="">Co-found it!</button></td>
-    </tr>';
+    var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%"></div></div></td><td><button class="btn btn-primary btn-sm" role="button" value="%key%">Co-found it!</button></td></tr>';
 
-    var tree = $("<div>" + htmlSource + "</div>");
 
-    if(projects.length==0){
 
+    if(!projects.length){
+      console.log("No element in projects")
+      $("#table-all-projects").html("<h4>no projects available</h4>");
     }
 
   for(var i=0;i<projects.length;i++){
 
-    var row=tree;
-    row.find(".name").val(projects[i][0]);
-    row.find(".name").val(projects[i][1]);
+    var row=htmlSrc;
     var progress= Math.round(projects[i][2]/projects[i][1]*100);
-    row.find(".progress-bar").css("width":progress);
-    row.find("button").attr("value",projects[i][3]);
 
-    if(i>0){
-      $(id).val(row.html())
-    }
-    $(id).append(row.html());
+    row = row.replace("%name%", projects[i][0]);
+    row = row.replace("%goal%", projects[i][1]);
+    row = row.replace("%width%", progress);
+    row = row.replace("%key%", projects[i][3]);
+
+
+    $(id).append(row);
 
 }
+
 }
