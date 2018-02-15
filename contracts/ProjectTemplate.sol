@@ -5,7 +5,7 @@ contract Project00000 {
     mapping (address => bool) mapped;
     mapping (uint256 => address) public shareholders;
 
-    int8 public state; // 1:funding, 2: building, 3: service, 4: terminated
+    int8 public state; // 0: initialisation, 1:funding, 2: building, 3: service, 4: terminated
     address private admin; //EWZ
     address private meter; // meter
     address private owner; //Guy with roof
@@ -158,9 +158,9 @@ contract Project00000 {
     }
     
     function setAmount(uint256 met, uint256 conv) public{
-        require(state==1);
+        require(state==0);
         require(msg.sender==admin);
-        state=3;
+        state=1;
         CHFtoCollect=met;
         CHFtoWei=conv;
         
