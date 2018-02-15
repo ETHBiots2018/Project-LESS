@@ -3,6 +3,10 @@ pragma solidity ^0.4.17;
 contract PowerToken {
     mapping (address => uint256) public balanceOf;
     mapping (address => uint8) public projects;
+    mapping (address => uint256) public generated;
+    mapping (uint256 => address) public projects_addr;
+
+    uint256 public index;
     
     address public admin;
     address public oraclize;
@@ -12,6 +16,7 @@ contract PowerToken {
     function PowerToken() public{
     admin = msg.sender;
     oraclize = 0;
+    index = 0;
     }
     
     function sellTokens(uint256 amount) public{
@@ -30,7 +35,7 @@ contract PowerToken {
         oraclize = oc;
     }
     
-    function pay() public payable {
+    function payToContract() public payable {
     }
     
     function transfer(address to, uint256 amount) public{
@@ -42,11 +47,14 @@ contract PowerToken {
     function addProject(address pc) public{
         require(msg.sender == admin);
         projects[pc] = 1;
+        projects_addr[index]=pc;
+        index+=1;
     }
     
     function distribute(address to, uint256 amount) public{
         require(projects[msg.sender] == 1);
         balanceOf[to] += amount;
+        generated[msg.sender] += amount;
     }
     
 }
