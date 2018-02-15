@@ -4,8 +4,8 @@
    * enter project address to PTBank
    * pay money to contract
 3. Initialize Project token
-   * Set Amount and ETH conversion rate
-   * Set PTBank
-   * Set MaxPower
    * Set Owner
+   * Set PTBank
+   * Set Amount and ETH conversion rate
+   * Set MaxPower
    * Set Meter
