@@ -17,7 +17,7 @@
 //     projects[2] = ["SP Bern", "50000", "45000", "1200"];
 //
 //     return projects;
-}
+// }
 
 //
 // function loggedIn(){
@@ -35,6 +35,7 @@ window.addEventListener('load', function() {
     } else {
 
         $("#popup-no-metamask").removeClass("d-none");
+        console.log("There is no MetaMask in this browser.");
 
     }
 
@@ -67,6 +68,13 @@ $('#popup-buy').on('click', function(e) {
     if (e.target !== this)
         return;
     $("#popup-buy").addClass("d-none");
+});
+
+$('#popup-no-metamask').on('click', function(e) {
+    if (e.target !== this)
+        return;
+    if(typeof web3 !== 'undefined')
+    $("#popup-no-metamask").addClass("d-none");
 });
 
 
