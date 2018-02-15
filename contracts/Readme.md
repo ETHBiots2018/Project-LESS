@@ -6,6 +6,7 @@
 3. Initialize Project token
    * Set Owner
    * Set PTBank
+   * Set name
    * Set Amount and ETH conversion rate
 4. ICO: Collect funds
 5. Enough funds collected
