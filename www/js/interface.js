@@ -45,7 +45,7 @@ for (i=0;i<index;i++){
             console.log(error);
             return;
         }
-        projects[q]=[res, 1, 1, res];
+        projects[q]=["name", "goal", "collected", res];
                 q+=1;
 
     }
@@ -67,6 +67,16 @@ for (i=0;i<index;i++){
 
     inst = projInst[i];
     
+    func='inst.name.call(function(error, res) { if (error) { console.log(error); return; } projects[vvvv][0]=res;});';
+    func=func.replace(/vvvv/g, i);
+    eval(func);
+    
+}
+
+for (i=0;i<index;i++){
+
+    inst = projInst[i];
+    
     func='inst.CHFtoCollect.call(function(error, res) { if (error) { console.log(error); return; } projects[vvvv][1]=res;});';
     func=func.replace(/vvvv/g, i);
     eval(func);
@@ -77,7 +87,7 @@ for (i=0;i<index;i++){
 
     inst = projInst[i];
     
-    func='inst.CHFtoWei.call(function(error, res) { if (error) { console.log(error); return; } projects[vvvv][4]=res/1000; if(res==0){projects[vvvv][4]=0;}});';
+    func='inst.CHFtoWei.call(function(error, res) { if (error) { console.log(error); return; } projects[vvvv][4]=res;});';
     func=func.replace(/vvvv/g, i);
     eval(func);
     }
@@ -86,7 +96,7 @@ for (i=0;i<index;i++){
 
     inst = projInst[i];
     
-    func='inst.missing.call(function(error, res) { if (error) { console.log(error); return;} if(res==0){projects[vvvv][2]=0;} else{ res=res/1000; projects[vvvv][2]=res/projects[vvvv][4]; }});';
+    func='inst.missing.call(function(error, res) { if (error) { console.log(error); return;} projects[vvvv][2]=res;});';
     func=func.replace(/vvvv/g, i);
     eval(func);
 

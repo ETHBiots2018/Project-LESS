@@ -83,7 +83,7 @@ $('#popup-no-metamask').on('click', function(e) {
 /*****  functions  ******/
 
 function putPopupBuy(e){
- console.log("click on a button-founding");
+ //console.log("click on a button-founding");
  var tRow=$(e).parent();
  while(!tRow.is("tr")){
    tRow=tRow.parent();
@@ -103,7 +103,11 @@ function putPopupBuy(e){
 function putProjectList(id) {
     console.log(projects);
     for(i=0;i<projects.length;i++){
-        projects[i][2]=projects[i][1]-projects[i][2]
+        
+        projects[i][2]=projects[i][1]-(projects[i][2]/projects[i][4]);
+        if (isNaN(projects[i][2])){
+            projects[i][2]=0;
+        }
     }
     
     $("#gif-loading").addClass("d-none");
