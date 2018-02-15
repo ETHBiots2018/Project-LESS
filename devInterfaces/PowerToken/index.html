@@ -1,0 +1,103 @@
+
+<html>
+    <head>
+        <title>web3 test</title>
+        <script src="jquery-3.2.1.js"></script>
+    </head>
+    <body>
+        <h1>Admin PTBank</h1>
+        <form id="addProject">
+            <input type="text" id="addProjectVal" placeholder="address" />
+            <button type="submit">addProject</button>
+        </form>
+        <form id="transfer">
+            <input type="text" id="transferAddress" placeholder="address"/>
+            <input type="text" id="transferAmount" placeholder="amount" />
+            <button type="submit">transfer</button>
+        </form>
+        <form id="setRate">
+            <input type="text" id="setRateVal" placeholder="1Rp in Wei" />
+            <button type="submit">setRate</button>
+        </form>
+        <form id="distribute">
+            <input type="text" id="distributeAddress" placeholder="address" />
+            <input type="text" id="distributeAmount" placeholder="amount" />
+            <button type="submit">distribute</button>
+        </form>
+        <form id="setOraclize">
+            <input type="text" id="setOraclizeVal" placeholder="address" />
+            <button type="submit">setOraclize</button>
+        </form>
+        <form id="sellTokens">
+            <input type="text" id="sellTokensVal" placeholder="amount" />
+            <button type="submit">sellTokens</button>
+        </form>
+
+<br><br>        
+        <div id="content">content</div>
+        <br>
+        <form id="admin">
+            <button type="submit">admin</button>
+        </form>
+        <form id="balanceOf">
+            <input type="text" id="balanceOfVal" placeholder="address" />
+            <button type="submit">balanceOf</button>
+        </form>        
+        <form id="buyBackRate">
+            <button type="submit">buyBackRate</button>
+        </form>
+        <form id="oraclize">
+            <button type="submit">oraclize</button>
+        </form>
+        <form id="projects">
+            <input type="text" id="projectsVal" placeholder="address" />
+            <button type="submit">projects</button>
+        </form>
+
+        
+        <script src="custom.js"></script>
+        
+       <!-- <script>
+        if (typeof window.web3 !== 'undefined') {
+        // This user has MetaMask, or another Web3 browser installed!
+        var ethereumProvider = web3.currentProvider
+        }
+        
+        var Web3 = require('web3') // The web3.js library
+        var myWeb3 = new Web3(web3.currentProvider)
+        function getBalance(){
+            myWeb3.getAccounts(function (err, accounts) {
+                myWeb3.eth.getBalance(accounts[0], function (err, balance) {
+                    console.log('Your balance is ' + Web3.fromWei(balance, 'ether'))   
+                });
+            });
+        }
+        
+        
+        var PTBank_contract= web3.eth.contract(contractAbi);
+        var PTBank = PTBank_contract.at(contractAddress);
+        
+        function getAdmin(){
+            PTBank.methods.admin().call(function(error, result){
+                if(!error)
+                    console.log(result)
+                else
+                    console.error(error);
+            });
+        /*
+            var admin = PTBank.admin.call();
+            $('#content').text('admin: ' + admin);
+        */
+        }
+        
+        function getBlock(a){
+            web3.eth.getBlock(a, function(error, result){
+                if(!error)
+                    console.log(result)
+                else
+                    console.error(error);
+            })
+        }
+        </script>-->
+    </body>
+</html>

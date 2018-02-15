@@ -5,17 +5,29 @@ contract PowerToken {
     mapping (address => uint8) public projects;
     
     address public admin;
+    address public oraclize;
+
     uint256 public buyBackRate = 1; //1 Token = 1 Rp.
 
     function PowerToken() public{
     admin = msg.sender;
+    oraclize = 0;
     }
     
-   /* function sellTokens(uint256 amount){
+    function sellTokens(uint256 amount) public{
         balanceOf[msg.sender] -= amount;
         msg.sender.transfer(amount*buyBackRate);
-        
-    }*/
+    }
+    
+    function setRate(uint256 rate) public {
+        require(msg.sender == oraclize);
+        buyBackRate = rate;
+    }
+    
+    function setOraclize(address oc) public {
+        require(msg.sender == admin);
+        oraclize = oc;
+    }
     
     function transfer(address to, uint256 amount) public{
         require(balanceOf[msg.sender]>=amount);
