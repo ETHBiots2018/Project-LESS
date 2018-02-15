@@ -8,4 +8,5 @@
    * Set PTBank
    * Set Amount and ETH conversion rate
    * Set MaxPower
-   * Set Meter
+4. ICO: Collect funds
+   * Set Meter once completed.
