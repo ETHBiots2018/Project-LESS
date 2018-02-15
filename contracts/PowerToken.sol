@@ -29,6 +29,9 @@ contract PowerToken {
         oraclize = oc;
     }
     
+    function pay() public payable {
+    }
+    
     function transfer(address to, uint256 amount) public{
         require(balanceOf[msg.sender]>=amount);
         balanceOf[msg.sender] -= amount;
