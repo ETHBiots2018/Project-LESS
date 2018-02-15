@@ -29,9 +29,9 @@ contract Project00000 {
     index = 0;
     admin = msg.sender;
     state=1;
-    meter = 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c;
-    owner = 0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db;
-    PTBank = 0x8609a0806279c94bcc5432e36b57281b3d524b9b;
+    meter = 0;
+    owner = 0xc6847fcba49beca14671420DFe2FBB66D69c763C;
+    PTBank = 0xdbf30d5a88285aec859ed10111934b7b8ea583ab;
     CHFtoWei = 1121300000000000; //Current ETH(wei) to CHF rate
     CHFtoCollect = 100000;
     missing=(CHFtoCollect * CHFtoWei) ;
