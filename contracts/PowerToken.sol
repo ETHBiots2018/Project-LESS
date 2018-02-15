@@ -15,6 +15,7 @@ contract PowerToken {
     }
     
     function sellTokens(uint256 amount) public{
+        require(amount*buyBackRate <= this.balance);
         balanceOf[msg.sender] -= amount;
         msg.sender.transfer(amount*buyBackRate);
     }
