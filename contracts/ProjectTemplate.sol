@@ -34,13 +34,6 @@ contract Project00000 {
     PTBank = 0;
     CHFtoWei = 0; //Current ETH(wei) to CHF rate
     CHFtoCollect = 0;
-    missing=(CHFtoCollect * CHFtoWei) ;
-    bonus = missing / 8 ;
-    balanceOf[owner]+=bonus;
-    balanceOf[admin]+=bonus;
-    addHolder(owner);
-    addHolder(admin);
-    totalShares = balanceOf[admin] + balanceOf[owner] + missing;
     }
     
     function addHolder(address holder) private{
@@ -168,7 +161,13 @@ contract Project00000 {
         state=1;
         CHFtoCollect=met;
         CHFtoWei=conv;
-        
+        missing=(CHFtoCollect * CHFtoWei) ;
+        bonus = missing / 8 ;
+        balanceOf[owner]+=bonus;
+        balanceOf[admin]+=bonus;
+        addHolder(owner);
+        addHolder(admin);
+        totalShares = balanceOf[admin] + balanceOf[owner] + missing;
     }
     
 }
