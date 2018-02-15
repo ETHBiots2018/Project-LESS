@@ -32,6 +32,12 @@ $('#popup-buy').on('click', function(e) {
 
 });
 
+function getProjects(){
+  var projects= [][];
+  projects[1]= ["SP Bern",]
+
+}
+
 function putProjectList(id){
   var projects= getProjects();
 
