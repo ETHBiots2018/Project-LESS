@@ -10,13 +10,13 @@
 //   return projects;
 // }
 
-function getProjectsUser() { // First Bracket: # of incr. ID, second bracket: [0]: Name , [1]: founding goal, [2]: invested money, [3]: produced energy tokens
-    var projects = [];
-    projects[0] = ["SP Bern", "100000", "30000", "12346"];
-    projects[1] = ["wasserkraftwerk Aargau", "150000", "30000", "123567"];
-    projects[2] = ["SP Bern", "50000", "45000", "1200"];
-
-    return projects;
+// function getProjectsUser() { // First Bracket: # of incr. ID, second bracket: [0]: Name , [1]: founding goal, [2]: invested money, [3]: produced energy tokens
+//     var projects = [];
+//     projects[0] = ["SP Bern", "100000", "30000", "12346"];
+//     projects[1] = ["wasserkraftwerk Aargau", "150000", "30000", "123567"];
+//     projects[2] = ["SP Bern", "50000", "45000", "1200"];
+//
+//     return projects;
 }
 
 //
@@ -25,14 +25,8 @@ function getProjectsUser() { // First Bracket: # of incr. ID, second bracket: [0
 //   return true;
 // }
 
-<<<<<<< HEAD
-
-/*****  on load  ******/
-
-=======
 var projects = [];
 /*****  other functions  ******/
->>>>>>> d4715037f59dec5996bc5c908f1c1204e0f29288
 window.addEventListener('load', function() {
 
     // Check if Web3 has been injected by the browser:
@@ -53,7 +47,7 @@ window.addEventListener('load', function() {
     if ($('#table-all-projects').length) {
         getProjects();
         setTimeout(function() { putProjectList('#table-all-projects');console.log("building"); }, 3000);
-        
+
 
     }
 
