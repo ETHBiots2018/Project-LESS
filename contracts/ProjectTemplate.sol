@@ -144,6 +144,11 @@ contract Project00000 {
         
     }
     
+    function setMaxPower(uint256 pow) public{
+        require(msg.sender==admin);
+        maxPower=pow;
+    }
+    
     function setOwner(address met) public{
         require(state!=4);
         require(msg.sender==admin || msg.sender==owner);
