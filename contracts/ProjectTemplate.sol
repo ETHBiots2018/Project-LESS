@@ -28,7 +28,7 @@ contract Project00000 {
     nightprice = 10;
     index = 0;
     admin = msg.sender;
-    state=1;
+    state=0;
     meter = 0;
     owner = 0;
     PTBank = 0;
