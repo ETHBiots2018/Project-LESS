@@ -14,8 +14,8 @@ BIOTS2018: Local Energy for a Sustainable Society
 Everything's static. Put it on a webserver and type in all the project contract addresses.
 
 ### Setup contracts
-Deploy one globally used PowerToken contract
-Deploy 1 Project contract per project. Define necessary startup vars. (Use python script?)
+* Deploy one globally used PowerToken contract
+* Deploy 1 Project contract per project. Define necessary startup vars. (Use python script?)
 
 ### Install Testnode
 donwload the following scripts
