@@ -25,9 +25,8 @@ function getProjectsUser() { // First Bracket: # of incr. ID, second bracket: [0
 //   return true;
 // }
 
-
+var projects = [];
 /*****  other functions  ******/
-
 window.addEventListener('load', function() {
 
     // Check if Web3 has been injected by the browser:
@@ -46,7 +45,9 @@ window.addEventListener('load', function() {
     }
 
     if ($('#table-all-projects').length) {
-        putProjectList('#table-all-projects');
+        getProjects();
+        setTimeout(function() { putProjectList('#table-all-projects');console.log("building"); }, 3000);
+        
 
     }
 
@@ -70,7 +71,6 @@ $('#popup-buy').on('click', function(e) {
 
 
 function putProjectList(id) {
-    var projects = getProjects();
     $("#gif-loading").addClass("d-none");
 
     var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%"></div></div></td><td><button class="btn btn-primary btn-sm" role="button" value="%key%">Co-found it!</button></td></tr>';
