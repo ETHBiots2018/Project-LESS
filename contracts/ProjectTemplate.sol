@@ -21,6 +21,7 @@ contract Project00000 {
     uint256 public dayprice;
     uint256 public nightprice;
     bool public dayTime;
+    string public name;
     
     function Project00000() public{
     dayTime=false;
@@ -147,6 +148,11 @@ contract Project00000 {
         require(state!=4);
         require(msg.sender==admin || msg.sender==owner);
         owner=met;
+    }
+    
+    function setName(string met) public{
+        require(msg.sender==admin);
+        name=met;
     }
     
     function setPTBank(address met) public{
