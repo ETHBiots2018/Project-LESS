@@ -6,5 +6,6 @@
 3. Initialize Project token
    * Set Amount and ETH conversion rate
    * Set PTBank
+   * Set MaxPower
    * Set Owner
    * Set Meter
