@@ -1,1 +1,4 @@
 simple JS interfaces using metamask to help debug contracts
+
+power: 0x9f56cd2756c2d0a06130c947cfeedd6065549e34
+proj0: 0xb069ec1435c75584e7b663cb0f5241f93e9eb0db
