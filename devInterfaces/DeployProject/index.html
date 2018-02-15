@@ -1,57 +1,87 @@
-
 <html>
     <head>
-        <title>web3 test</title>
+        <title>web3 api</title>
         <script src="jquery-3.2.1.js"></script>
     </head>
     <body>
-        <h1>Admin Project</h1>
-        <form id="setTariff">
-            <input type="checkbox" id="setTarriffVal"/>
-            <button type="submit">setTariff</button>
+        <div id="content">Can I has web3?!</div>
+        <h1>Deploy Project</h1>
+        <form id="deploy_project-form">
+            <button type="submit">Deploy new contract!</button>
         </form>
-        <form id="transfer">
-            <input type="text" id="transferAddress" placeholder="address"/>
-            <input type="text" id="transferAmount" placeholder="amount" />
-            <button type="submit">transfer</button>
-        </form>
-        <form id="buyTokens">
-            <input type="text" id="buyTokensVal" placeholder="amount (ETH)" />
-            <button type="submit">buyTokens</button>
-        </form>
-        <form id="cancelICO">
-            <button type="submit">cancelICO</button>
-        </form>
-        <form id="generateDividend">
-            <input type="text" id="generateDividendVal" placeholder="Energy amount" />
-            <input type="text" id="generateDividendTimestamp" placeholder="timestamp" />
-            <button type="submit">generateDividend</button>
-        </form>
-        <form id="setMeter">
-            <input type="text" id="setMeterVal" placeholder="address" />
-            <button type="submit">setMeter</button>
-        </form>
-        <form id="terminateProject">
-            <button type="submit">terminateProject</button>
-        </form>
-
-<br><br>        
-        <div id="content">content</div>
         <br>
-        <form id="balanceOf">
-            <input type="text" id="balanceOfVal" placeholder="address" />
-            <button type="submit">balanceOf</button>
-        </form>        
-        <form id="shareholders">
-            <input type="text" id="shareholdersVal" placeholder="address" />
-            <button type="submit">shareholders</button>
+        or use this address <br>
+        <form id="project-form">
+                <input type="text" name="project" id="project" value="0xdbf30d5a88285aec859ed10111934b7b8ea583ab" />
+                <button type="submit">Submit!</button>
         </form>
-        <form id="state">
-            <button type="submit">state</button>
+        <br>
+        Your choosen Project address for what comes next
+        <div id="project_address"> Address</div>
+        <br>
+        <br>
+        Enter the Project address to the Power Token Bank <br>
+        <form id="PTBank-form">
+            <input type="text" name="ptbank" id="ptbank" value="" />
+            <button type="submit">Submit to contract!</button>
+        </form>
+        <br>
+        Pay Money to contract (i guess that the money bank knows who i am??) <br>
+        <form id="PayMoney-form">
+            <input type="text" name="mooneytocontract" id="mooneytocontract" value="2" />
+            <button type="submit">Purchase</button>
+        </form>
+        <br>
+        <br>
+        <h2> Initialize Project token</h2>
+
+        set Owner of the Project <br>
+        <form id="owner-form">
+            <input type="text" name="owner" id="owner" value="1" />
+            <button type="submit">Submit</button>
         </form>
 
-        
+        <br>
+        set BT Bank <br>
+        <form id="set_bank-form">
+            <input type="text" name="set_bank" id="set_bank" value="0xdbf30d5a88285aec859ed10111934b7b8ea583ab" />
+            <button type="submit">Submit</button>
+        </form>
+
+        <br>
+        Set Amount of Invest<br>
+        <form id="set_amount-form">
+            <input type="text" name="set_amount" id="set_amount" value="10" />
+            <button type="submit">Purchase</button>
+        </form>
+        <br>
+        set etherum to chf rate <br>
+        <form id="eth_rate-form">
+            <input type="text" name="eth_rate" id="eth_rate" value="1" />
+            <button type="submit">Submit</button>
+        </form>
+
+        <br>
+
+        <h2> Collect Funds</h2>
+        <br>
+        Fund your project <(pay all of the project amount>)<br>
+        <form id="collect_funds-form">
+            <input type="text" name="collect_funds" id="collect_funds" value="10" />
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2> Enough funds collected</h2>
+        set Max Power in mWh (need to be owner of project) <br>
+        <form id="maxpower-form">
+            <input type="text" name="maxpower" id="maxpower" value="100000000" />
+            <button type="submit">Submit</button>
+        </form>
+        set smart meter adress (need to be owner of project) <br>
+        <form id="smart_meter-form">
+            <input type="text" name="smart_meter" id="smart_meter" value="0xdEa8AAB5FA6b74f82B4b399e20B13368BAcF342e" />
+            <button type="submit">Submit</button>
+        </form>
         <script src="custom.js"></script>
-        
     </body>
 </html>
