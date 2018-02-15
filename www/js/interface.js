@@ -8,7 +8,7 @@ return false;
 
 var index=0;
 function getProjects(){ // gets all projects running and their information and puts it in an array
-//var projects=[][]; // First Bracket: # of incr. ID, second bracket: [0]: Name , [1]: founding goal, [2]: collected money, [3]: BC-address
+//var projects=[][]; // First Bracket: # of incr. ID, second bracket: [0]: Name , [1]: founding goal, [2]: collected money, [3]: BC-address, [4]: chftowei
     var PTBank = getPTBankInst(); //PTBank instance
     
     
@@ -37,14 +37,61 @@ var projects =
 }
 
 function afterWait1(){
-    
-    
+var PTBank = getPTBankInst();    
+var q=0;
 for (i=0;i<index;i++){
-    console.log("a");
+    PTBank.projects_addr.call(i, function(error, res) {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        projects[q]=[res, 1, 1, res];
+                q+=1;
+
+    }
+    );  
+}
+setTimeout(function() { afterWait2(); }, 1000);
+
+
 }
 
-projects[0]=["asdf"];
+function afterWait2(){
+var projInst=[];
+for (i=0;i<index;i++){
+    projInst[i] = getProjectInst(projects[i][3]);    
+}
+console.log(projInst)
 
+for (i=0;i<index;i++){
+
+    inst = projInst[i];
+    
+    func='inst.CHFtoCollect.call(function(error, res) { if (error) { console.log(error); return; } projects[vvvv][1]=res;});';
+    func=func.replace(/vvvv/g, i);
+    eval(func);
+    
+}
+
+for (i=0;i<index;i++){
+
+    inst = projInst[i];
+    
+    func='inst.CHFtoWei.call(function(error, res) { if (error) { console.log(error); return; } projects[vvvv][4]=res/1000; if(res==0){projects[vvvv][4]=0;}});';
+    func=func.replace(/vvvv/g, i);
+    eval(func);
+    }
+
+for (i=0;i<index;i++){
+
+    inst = projInst[i];
+    
+    func='inst.missing.call(function(error, res) { if (error) { console.log(error); return;} if(res==0){projects[vvvv][2]=0;} else{ res=res/1000; projects[vvvv][2]=res/projects[vvvv][4]; }});';
+    func=func.replace(/vvvv/g, i);
+    eval(func);
+
+
+}
 }
 
 function getMoneyInvested(){ // gets the total money invested in all projects by the user
@@ -72,5 +119,9 @@ projects = getProjects();
 function getPTBankInst(){ // get Power Token contract address
     var ptbankaddr="0x9f56cd2756c2d0a06130c947cfeedd6065549e34";
     return web3.eth.contract(PowerTokenContractAbi).at(ptbankaddr);
+}
+
+function getProjectInst(ptbankaddr){ // get project contract address
+    return web3.eth.contract(ProjectContractAbi).at(ptbankaddr);
 }
 

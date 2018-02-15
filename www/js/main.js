@@ -46,7 +46,7 @@ window.addEventListener('load', function() {
 
     if ($('#table-all-projects').length) {
         getProjects();
-        setTimeout(function() { putProjectList('#table-all-projects');console.log("building"); }, 3000);
+        setTimeout(function() { putProjectList('#table-all-projects');console.log("building"); }, 5000);
         
 
     }
@@ -71,6 +71,11 @@ $('#popup-buy').on('click', function(e) {
 
 
 function putProjectList(id) {
+    console.log(projects);
+    for(i=0;i<projects.length;i++){
+        projects[i][2]=projects[i][1]-projects[i][2]
+    }
+    
     $("#gif-loading").addClass("d-none");
 
     var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%"></div></div></td><td><button class="btn btn-primary btn-sm" role="button" value="%key%">Co-found it!</button></td></tr>';
