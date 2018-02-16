@@ -14,6 +14,19 @@ This Project was created during the [BIOTS 2018](https://biots.org) hackathon. T
 * Thomas Keller
 * Michel Perez
 
+# Concept  
+## Funding process  
+An owner of a building makes ewz a proposal for a power plant. ewz initializes the project on the Blockchain with a target amount of fundings. At this moment investors can invest on the smart contract. In exchange the Investors get share tokens worth the amount of what they invested. Both the owner and ewz also receive an amount of share tokens; the former for providing the building and location and the latter for the maintenance and service costs. If ewz or the owner want to they also have the opportunity to invest.
+In case the target amount of money is reached, ewz then receives the funds and is responsible to coordinate the acquisition process of the power plant with the owner of the location.  
+![funding process](https://github.com/tttttx2/Project-LESS/blob/master/founding.jpg "funding process")  
+
+## System running  
+Once the power plant is in operation, it generates power and injects it in the local electricity network. The smart meter records the amount of power injected and then mints power tokens with the according value specified by the agreed upon day- or night-price respectively.
+These tokens then get distributed to the investors (including the owner and ewz) according to the proportion of their share tokens. The investor can then later trade the power tokens for money with ewz.
+In any case, where the project has to be abandoned or doesn’t generate the necessary funds, the smart contract automatically redistributes the money to the investors and terminates itself.  
+![running process](https://github.com/tttttx2/Project-LESS/blob/master/running.jpg "running process")  
+
+
 ## Installation
 ### Web interface
 Everything's static. Put it on a webserver and type in all the project contract addresses.
