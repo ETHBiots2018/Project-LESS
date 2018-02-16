@@ -50,11 +50,26 @@ open python console and type in:
 ```python
 from web3 import Web3, HTTPProvider, TestRPCProvider
 web3 = Web3(HTTPProvider('http://127.0.0.1:8545/'))
-web3.personal.newAccount("yourPassword")
+
 ```
-to create a new account, remember your password
+use 1 or 2
+
+1. to create a new account, remember your password
 unlock your account every time you actually use it
 ```python
-web3.personal.unlockAccount('0xdEa8AAB5FA6b74f82B4b399e20B13368BAcF342e', "yourPassword")
+web3.personal.newAccount("yourPassword")
+web3.personal.unlockAccount('0xdEa8AAB5FA6b74f82B4b399e20B13368BAcF342e', "yourPassphrase")
 ```
 
+2. if you have already an account type in your console:
+```python
+web3.eth.accounts[0]
+```
+be sure that you have your address (this will be your smart meter address)  and your Passphrase.
+This smart meter address you have to add to your project smart contract.
+
+to start the the smart meter use 
+```python
+import SmartMeter
+SmartMeter.runSmartMeter('http://127.0.0.1:8545/','YourSmartContractProjectAddress',  passphrase='yourPassphrase')
+```
