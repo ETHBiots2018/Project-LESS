@@ -32,6 +32,7 @@ In any case, where the project has to be abandoned or doesn’t generate the nec
 Everything's static. Put it on a webserver and type in all the project contract addresses.
 
 ### Setup contracts
+* [Detailed process here](contracts/Readme.md)
 * Deploy one globally used PowerToken contract
 * Deploy 1 Project contract per project. Define necessary startup vars.
 
