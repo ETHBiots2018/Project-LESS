@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/custom.css">
+    <!--<meta http-equiv="refresh" content="5">-->
 </head>
 
 <body class="main-bg">
@@ -50,67 +51,13 @@
         </div>
     </nav>
 
+
     <!-- Content of the page -->
 
-    <div class="container main-content mt-3">
+    <div class="container-fluid">
+        <h1 class="main-title display-1 text-center">Please<br>Login.</h1>
+        <h1 class="sub-title text-center">Unlock Metamask and try again.</h1>
 
-        <h1 id="accountName">Your account</h1>
-        <h4>An overview of your assets.</h4>
-
-        <div class="row">
-            <div class="col-6">
-                <div class="data-field">
-                    <h1>Money invested:</h1>
-                    <h1 class="display-8" id="money-user"></h1>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="data-field">
-                    <h1>Energy-tokens:</h1>
-                    <h1 class="display-8" id="energy-token-user"></h1>
-                </div>
-            </div>
-        </div>
-
-        <!-- Table  -->
-
-        <h1 class="mt-5">Assets in Detail</h1>
-
-        <table class="table table-striped mt-4">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Invested (CHF)</th>
-                    <th scope="col">Share</th>
-
-                </tr>
-            </thead>
-            <tbody id="table-user-projects">
-
-
-            </tbody>
-        </table>
-        <div id="gif-loading" class="">
-            <div class="d-flex justify-content-center">
-                <img class="img-fluid" src="img/loading.gif" alt="loading...">
-            </div>
-        </div>
-
-    </div>
-
-    <!-- no meta mask popup -->
-
-    <div id="popup-no-metamask" class="d-none">
-
-        <div class="popup-content container">
-
-            <h1>Opps, something's missing...</h1>
-            <h4>You don't have MetaMask installed. Get the browser plugin here:</h4>
-            <a href="https://metamask.io/" target="_blank">
-            <img class="img-fluid" src="img/get_mm.png" alt="get MetaMask here!">
-          </a>
-        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -121,20 +68,6 @@
     <script src="js/main.js"></script>
     <script src="js/abi.js"></script>
     <script src="js/interface.js"></script>
-    <script>
-     var PTBank = getPTBankInst(); //PTBank instance
-        PTBank.balanceOf.call(web3.eth.accounts[0], function(error, res) {
-            if (error) {
-                console.log(error);
-                return;
-            }
-            console.log(web3.eth.accounts[0]);
-        $('#energy-token-user').text(''+ Math.round(res * 100) / 100);
-        $('#money-user').text(''+ Math.round(moneyInvested * 100) / 100);
-        $('#accountName').text('Account nr: '+ web3.eth.accounts[0]);
-        }
-        );
-    </script>
 
 
 </body>
