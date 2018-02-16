@@ -3,6 +3,8 @@
 
 This Project was created during the [BIOTS 2018](https://biots.org) hackathon. The goal was to solve the [EWZ](https://ewz.ch) provided challenge.
 
+![Project-LESS](img/sc_index.png "Web interface")
+
 ## Contributors
 * Toni Tanner
 * Michael Vogel
