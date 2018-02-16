@@ -166,7 +166,8 @@ function getProjectsUser(){ // gets all projects that the user invested in and p
 }
 
 function getPTBankInst(){ // get Power Token contract address
-    var ptbankaddr="0x9f56cd2756c2d0a06130c947cfeedd6065549e34";
+    //var ptbankaddr="0x9f56cd2756c2d0a06130c947cfeedd6065549e34";
+    var ptbankaddr="0x5e50619a95c6e95362f17b3d295cece02fcc04c3";
     return web3.eth.contract(PowerTokenContractAbi).at(ptbankaddr);
 }
 
