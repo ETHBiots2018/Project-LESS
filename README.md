@@ -20,9 +20,9 @@ Everything's static. Put it on a webserver and type in all the project contract 
 
 ### Setup contracts
 * Deploy one globally used PowerToken contract
-* Deploy 1 Project contract per project. Define necessary startup vars. (Use python script?)
+* Deploy 1 Project contract per project. Define necessary startup vars.
 
-### Install Testnode
+### Local Testnode for SmartMeter simulation
 donwload the following scripts
 1. geth
 2. web3.py
