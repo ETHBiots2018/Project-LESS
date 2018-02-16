@@ -122,7 +122,7 @@ function putProjectList(id) {
 
     $("#gif-loading").addClass("d-none");
 
-    var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%" value="%width%%"></div></div></td><td><button class="btn btn-primary btn-sm button-founding" onclick="putPopupBuy(this)" role="button" value="%key%" enabled="1">Co-found it!</button></td></tr>';
+    var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%" value="%width%%"></div></div></td><td><button class="btn btn-primary btn-sm button-founding" onclick="putPopupBuy(this)" role="button" value="%key%" enabled="1">Co-fund it!</button></td></tr>';
 
 
 
@@ -143,7 +143,7 @@ function putProjectList(id) {
             row = row.replace("%key%", projects[i][3]);
         }
         else{
-            row = row.replace("Co-found it!", "Funded!");
+            row = row.replace("Co-fund it!", "Funded!");
             row = row.replace("enabled=\"1\"", "disabled");
         }
 
