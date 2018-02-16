@@ -3,7 +3,7 @@
 
 This Project was created during the [BIOTS 2018](https://biots.org) hackathon. The goal was to solve the [EWZ](https://ewz.ch) provided challenge.  
 ## Come and see our project live on [www.project-less.ch](https://project-less.ch)!
-![Project-LESS](https://github.com/tttttx2/Project-LESS/blob/master/www/img/sc_index.png "Web interface")
+![Project-LESS](https://i.imgur.com/jBkTNv6.gifv "Web interface")
 
 ## Contributors
 * Toni Tanner
