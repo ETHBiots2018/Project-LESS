@@ -65,11 +65,12 @@ web3.personal.unlockAccount('0xdEa8AAB5FA6b74f82B4b399e20B13368BAcF342e', "yourP
 ```python
 web3.eth.accounts[0]
 ```
-be sure that you have your address (this will be your smart meter address)  and your Passphrase.
-This smart meter address you have to add to your project smart contract.
+* the address you just created or already have will be the address of your smart contract
+* This smart meter address you have to add to your project smart contract.
 
 to start the the smart meter use 
 ```python
 import SmartMeter
-SmartMeter.runSmartMeter('http://127.0.0.1:8545/','YourSmartContractProjectAddress',  passphrase='yourPassphrase')
+SmartMeter.runSmartMeter('http://127.0.0.1:8545/','YourContractProjectAddress',  passphrase='yourPassphrase')
 ```
+the script will continuous send a random generated (mWh, timestap) to the smart contract of your power plant  
