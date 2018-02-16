@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
     #createNewEnvironmen('http://127.0.0.1:8545/')
 
-    runSmartMeter('http://127.0.0.1:8545/','0x55815C4591D5A685d4e81B73Dae32725A0b77FCC')
+    runSmartMeter('http://127.0.0.1:8545/','0xFcc08BF7530c3683B0ddA76003df75EA51B9AaCd')
 
     # newContract(web3)
     #contract_address = '0x8626A4F15d9c8b3F4D06888F4Bb2185f8EA7A46C'
