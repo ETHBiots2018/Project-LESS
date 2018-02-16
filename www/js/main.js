@@ -44,11 +44,11 @@ window.addEventListener('load', function() {
         $('#status-login').html('Logged in');
         $('#status-login').removeClass('badge-danger');
     }
-    
-    if (loggedIn()==false && /login.html/.test(window.location.href)==false){
-        window.location.replace("login.html");
-    }
-    
+
+    // if (loggedIn()==false && /login.html/.test(window.location.href)==false){
+    //     window.location.replace("login.html");
+    // }
+
 //     if (loggedIn()==true && /login.html/.test(window.location.href)==true){
 //         window.location.replace("index.html");
 //     }
@@ -113,13 +113,13 @@ function putPopupBuy(e){
 function putProjectList(id) {
     console.log(projects);
     for(i=0;i<projects.length;i++){
-        
+
         projects[i][2]=projects[i][1]-(projects[i][2]/projects[i][4]);
         if (isNaN(projects[i][2])){
             projects[i][2]=0;
         }
     }
-    
+
     $("#gif-loading").addClass("d-none");
 
     var htmlSrc = '<tr><th scope="row" class="name">%name%</th><td class="goal">%goal%</td><td><div class="progress"><div class="progress-bar" role="progressbar" style="width: %width%%" value="%width%%"></div></div></td><td><button class="btn btn-primary btn-sm button-founding" onclick="putPopupBuy(this)" role="button" value="%key%" enabled="1">Co-found it!</button></td></tr>';
