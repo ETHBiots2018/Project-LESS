@@ -1,0 +1,199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University Assignment Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Title_Creation)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pp]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},%252
+ left=20mm,
+ top=25mm,
+ }
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\input{solidity-highlighting.tex}
+\usepackage{hyperref}
+\usepackage{setspace}
+\hypersetup{%
+	pdfpagelabels=true,%
+	plainpages=false,%
+	pdfauthor={Dominic Hagmann, Jannik Brun, Lucien Erdin, Michael Vogel, Michel Perez, Thomas Keller, Toni Tanner},%
+	pdftitle={Project-LESS},%
+	pdfsubject={ETH Zurich, BIOTS2018},%
+	bookmarksnumbered=true,%
+	colorlinks=false,%
+	citecolor=black,%
+	filecolor=black,%
+	linkcolor=black,%
+	urlcolor=black,%
+	pdfstartview=FitH%
+}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{Project-LESS, BIOTS 2018, ETH Zürich}
+\rfoot{Page \thepage}
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines
+
+
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE ETH Zürich}\\[1.5cm] % Name of your university/college
+\textsc{\Large BIOTS 2018}\\[0.5cm] % Major heading such as course name
+\textsc{\large Everywhere Energy}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Project LESS}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\emph{All contributors contributed equally to the report and software. \\ ordered alphabetically}
+\vspace*{35px}
+
+\begin{minipage}{0.8\textwidth}
+\begin{flushleft} \large
+Dominic \textsc{Hagmann} \hfill{} hagmando@student.ethz.ch \\
+Jannik \textsc{Brun} \hfill{} brunj@student.ethz.ch \\
+Lucien \textsc{Erdin} \hfill{} lerdin@student.ethz.ch \\
+Michael \textsc{Vogel} \hfill{} vogelmic@student.ethz.ch \\
+Michel \textsc{Perez} \hfill{} miperez@student.ethz.ch \\
+Thomas \textsc{Keller} \hfill{} thomkell@student.ethz.ch \\
+Toni \textsc{Tanner} \hfill{} tannerto@student.ethz.ch \\
+\end{flushleft}
+\end{minipage}
+\vspace*{100px}
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large 30.04.2018}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+%\includegraphics{logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+
+%----------------------------------------------------------------------------------------
+%	END OF TITLEPAGE SECTION
+%----------------------------------------------------------------------------------------
+
+ 
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+%\pagenumbering{roman} %use roman page numbering in the frontmatter
+
+%----------------------------------------------------------------------------------------
+%	GENERAL INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty}
+{\small
+\strut\vfill % push the content to the bottom of the page
+\vspace{0.2cm}
+\noindent The software code which is part of this report is open source and available at:\newline https://github.com/ETHBiots2018/Project-LESS.
+\newline
+\newline 
+This project report was written as part of the spring 2018 course 'Blockchain And the Internet of Things (851-0591-01L)' run by M. Dapp, S. Klauser, and D. Helbing.
+}
+\newline
+\newline
+\noindent The contents of this report are licensed under "CC BY-SA 4.0". The template is licensed under "CC BY-NC-SA 3.0". Solidity highlighting is licensed under "MIT License". Unlicensed parts shall be licensed under "CC BY-SA 4.0".
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	STAX HIGHLIGHTING SECTION
+%----------------------------------------------------------------------------------------
+%import package in package section.
+\lstdefinestyle{mystyle}{
+   % backgroundcolor=\color{backcolour},   
+   % commentstyle=\color{codegreen},
+   % keywordstyle=\color{magenta},
+   % numberstyle=\tiny\color{codegray},
+   % stringstyle=\color{codepurple},
+   % basicstyle=\footnotesize,
+   % breakatwhitespace=false,         
+   % breaklines=true,                 
+   % captionpos=b,                    
+   % keepspaces=true,                 
+   % numbers=right,                    
+   % numbersep=5pt,                  
+   % showspaces=false,                
+   % showstringspaces=false,
+   % showtabs=false,                  
+   % tabsize=2,
+   aboveskip=20pt,
+   belowskip=20pt,
+   frame=single
+}
+\lstset{style=mystyle}
+
+
+%----------------------------------------------------------------------------------------
+%	CONTENT SECTION
+%----------------------------------------------------------------------------------------
+\setstretch{1.5}
+\thispagestyle{empty}
+\pdfbookmark[0]{Contents}{label:contents}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic} %use arabic page numbering in the mainmatter
+\input{BIOTS18_-_submission_-_ProjectLESS.tex}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	ATTACHMENT SECTION
+%----------------------------------------------------------------------------------------
+
+%\pagenumbering{roman}
+%\setcounter{page}{1}
+%\input{attachments.tex}
+%\clearpage
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY SECTION
+%----------------------------------------------------------------------------------------
+%\bibliographystyle{unsrt}
+%\bibliography{bibliography}
+
+\end{document}
