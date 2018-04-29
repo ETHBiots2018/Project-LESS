@@ -3,7 +3,7 @@
 
 This Project was created during the [BIOTS 2018](https://biots.org) hackathon. The goal was to solve the [EWZ](https://ewz.ch) provided challenge.  
 ## Come and see our project live on [www.project-less.ch](https://project-less.ch)!
-![Project-LESS](https://github.com/tttttx2/Project-LESS/blob/master/www/img/sc_index.png "Web interface")
+![Project-LESS](output.gif "Web interface")
 
 ## Contributors
 * Toni Tanner
@@ -32,6 +32,7 @@ In any case, where the project has to be abandoned or doesn’t generate the nec
 Everything's static. Put it on a webserver and type in all the project contract addresses.
 
 ### Setup contracts
+* [Detailed process here](contracts/Readme.md)
 * Deploy one globally used PowerToken contract
 * Deploy 1 Project contract per project. Define necessary startup vars.
 
